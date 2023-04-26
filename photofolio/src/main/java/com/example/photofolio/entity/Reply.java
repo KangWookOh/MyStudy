@@ -1,9 +1,6 @@
 package com.example.photofolio.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +26,10 @@ public class Reply {
 
     @UpdateTimestamp
     private LocalDateTime r_UpdateTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "b_Id")
+    private Board board;
 
     @Builder
     public Reply(String r_contents,String r_writer, LocalDateTime r_createtime,LocalDateTime r_updatetime)

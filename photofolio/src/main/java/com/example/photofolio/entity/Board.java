@@ -1,9 +1,7 @@
 package com.example.photofolio.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.photofolio.entity.enums.Category;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,14 +27,24 @@ public class Board {
     @UpdateTimestamp
     private LocalDateTime b_UpdateTime;
 
+    @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_Id")
+    private Account account;
+
     @Builder
-    public Board(String b_title, String b_contents, String b_writer, LocalDateTime b_createtime, LocalDateTime b_updatetime)
+    public Board(String b_title, String b_contents, String b_writer, LocalDateTime b_createtime, LocalDateTime b_updatetime,Category category)
     {
         this.b_Title = b_title;
         this.b_Contents =b_contents;
         this.b_Writer =b_writer;
         this.b_CreateTime =b_createtime;
         this.b_UpdateTime =b_createtime;
+        this.category =category;
     }
 
 
