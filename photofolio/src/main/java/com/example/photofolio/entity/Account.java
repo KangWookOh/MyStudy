@@ -15,25 +15,25 @@ public class Account {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    private String Account_Id;
+    private String ac_Id;
 
-    private String Account_Pw;
+    private String ac_Pw;
 
-    private String Account_Name;
+    private String ac_Name;
 
-    private String Account_Birth;
+    private String ac_Birth;
 
-    private String Account_Phone;
-
+    private String ac_Phone;
 
     @Builder
-    public Account(String account_id, String account_pw,String account_Name,String account_Birth,String account_Phone)
+    public Account(String ac_id, String ac_pw,String ac_name,String ac_birth,String ac_phone)
     {
-        this.Account_Id = account_id;
-        this.Account_Pw =account_pw;
-        this.Account_Name =account_Name;
-        this.Account_Birth = account_Birth;
-        this.Account_Phone =account_Phone;
-
+        this.ac_Id = ac_id;
+        this.ac_Pw =ac_pw;
+        this.ac_Name = ac_name;
+        this.ac_Birth = ac_birth;
+        this.ac_Phone =ac_phone;
     }
+
+
 }
