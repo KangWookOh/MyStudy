@@ -1,10 +1,12 @@
 package com.example.photofolio.entity.Dto;
 
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
+@Getter
 @NoArgsConstructor
 public class AccountDto {
 
