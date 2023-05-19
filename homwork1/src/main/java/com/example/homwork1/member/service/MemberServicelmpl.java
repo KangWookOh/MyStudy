@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class MemberServicelmpl implements MemberService{
+public class  MemberServicelmpl implements MemberService{
 
     private MemberRepository memberRepository;
     @Override
@@ -26,4 +26,5 @@ public class MemberServicelmpl implements MemberService{
     public String login(String m_Id, String m_Pw) {
         return null;
     }
+
 }

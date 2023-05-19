@@ -41,4 +41,10 @@ public class Board {
         this.updateTime = updateTime;
         this.member = member;
     }
+
+    public void updateBoard(String title,String content, LocalDateTime updateTime){
+        this.title = title;
+        this.content = content;
+        this.updateTime = updateTime;
+    }
 }
